@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .question-container {
+            text-align: center;
+        }
+
+        .question {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease; /* Add transition for smooth scaling */
+            min-width: 120px; /* Set fixed width for buttons */
+        }
+
+        .btn-yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .btn-no {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="question-container">
+        <div class="question">Send what i have been asking for?</div>
+        <div class="btn-container">
+            <button class="btn btn-yes" id="yesBtn" onclick="redirectToHome()">Yes</button>
+            <button class="btn btn-no" id="noBtn">No</button>
+        </div>
+    </div>
+    <script>
+        // Function to increase the size of the "Yes" button
+        function increaseButtonSize(button) {
+            var computedStyle = window.getComputedStyle(button);
+            var fontSize = parseFloat(computedStyle.getPropertyValue('font-size'));
+            fontSize += 4; // Increase font size by 4px
+            button.style.fontSize = fontSize + 'px';
+            button.style.padding = '14px 28px'; // Increase padding for better visibility
+        }
+
+        // Function to decrease the size of the "No" button and align it to the center
+        function decreaseButtonSize(button) {
+            var computedStyle = window.getComputedStyle(button);
+            var fontSize = parseFloat(computedStyle.getPropertyValue('font-size'));
+            fontSize -= 4; // Decrease font size by 4px
+            button.style.fontSize = fontSize + 'px';
+            button.style.padding = '10px 20px'; // Reset padding
+            button.style.marginLeft = 'auto'; // Align to center using auto margin
+            button.style.marginRight = 'auto'; // Align to center using auto margin
+        }
+
+        // Flag to track the number of clicks on the "No" button
+        var noButtonClickCount = 0;
+
+        // Add event listener to the "No" button
+        document.getElementById('noBtn').addEventListener('click', function() {
+            noButtonClickCount++;
+
+            if (noButtonClickCount === 1) {
+                this.textContent = 'Are you sure?'; // Change the button text
+                decreaseButtonSize(this); // Decrease the size of the "No" button and align to center
+            } else if (noButtonClickCount === 2) {
+                this.textContent = 'Really?'; // Change the button text
+            } else if (noButtonClickCount === 3) {
+                this.textContent = 'Pretty please'; // Change the button text
+            } else if (noButtonClickCount === 4) {
+                this.textContent = 'Please'; // Change the button text
+            } else if (noButtonClickCount === 5) {
+                this.textContent = 'Then I am going to die'; // Change the button text
+            } else if (noButtonClickCount === 6) {
+                this.textContent = 'Yep, I am dead'; // Change the button text
+            } else if (noButtonClickCount === 7) {
+                this.textContent = 'Ok, you are talking to my ghost'; // Change the button text
+            } else if (noButtonClickCount === 8) {
+                this.textContent = 'Please, Sandu'; // Change the button text
+            } else if (noButtonClickCount === 9) {
+                this.textContent = 'No :('; // Change the button text
+            }
+
+            increaseButtonSize(document.getElementById('yesBtn')); // Increase the size of the "Yes" button
+        });
+
+        function redirectToHome() {
+            window.location.href = "character.html";
+        }
+    </script>
+</body>
+</html>

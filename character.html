@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodePen - Character Showcase Gallery</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+      /* Add some basic styles for the button */
+      .go-back-button {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          background-color: white;
+          border: none;
+          cursor: pointer;
+          padding: 10px;
+          border-radius: 50%;
+      }
+
+      .go-back-button svg {
+          fill: blue;
+          width: 30px;
+          height: 30px;
+          transition: transform 0.2s;
+      }
+
+      .go-back-button:hover svg {
+          transform: scale(1.2);
+      }
+
+      /* Styles for the additional content */
+      .additional-content-container {
+          margin-top: 20px;
+          text-align: center;
+          color: azure;
+          margin-top: 50px;
+      }
+  </style>
+</head>
+<body>
+  
+    <!-- Add the button here -->
+    <button class="go-back-button" title="Go Back" onclick="redirectToHome()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path fill="none" d="M0 0h24v24H0z"/>
+          <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+      </svg>
+  </button>
+  
+
+    <!-- partial:index.partial.html -->
+    <div class="container">
+        <div class="box box-1" style="--img: url(https://i.postimg.cc/FK2PWKyG/Saree-Sandu.jpg);" data-text="Saree Sandu"></div>
+        <div class="box box-2" style="--img: url(https://i.postimg.cc/kXq7YJwn/IMG-20200116-WA0013.jpg);" data-text="Goofy Sandu"></div>
+        <div class="box box-3" style="--img: url(https://i.postimg.cc/nz413Gcc/Screenshot-2017-11-29-10-18-38-287-com-snapchat-android.jpg);" data-text="Soti Sandu"></div>
+        <div class="box box-4" style="--img: url(https://i.postimg.cc/Gp2FFn6K/Screenshot-2018-10-10-13-29-30-275-com-snapchat-android.png);" data-text="Sexy Sandu"></div>
+        <div class="box box-5" style="--img: url(https://i.postimg.cc/WzQbtggg/Screenshot-2018-10-18-00-56-42-354-com-snapchat-android.png);" data-text="Moti Sandu"></div>
+        <div class="box box-6" style="--img: url(https://i.postimg.cc/4d0XFV8q/IMG-20181121-WA0000.jpg);" data-text="Cutie Sandu"></div>
+        <div class="box box-7" style="--img: url(https://i.postimg.cc/g0nzygs8/IMG-20190705-WA0038.jpg);" data-text="Foodie Sandu"></div>
+    </div>
+    <!-- partial -->
+
+    <!-- Additional content container -->
+    <div class="additional-content-container">
+        <p>Send to add to this!</p>
+    </div>
+    
+    <script>
+        function redirectToHome() {
+            window.location.href = "home.html";
+        }
+    </script>
+</body>
+</html>
